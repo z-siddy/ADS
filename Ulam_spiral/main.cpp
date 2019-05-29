@@ -1,6 +1,8 @@
 // Ulam Spiral Visualization task for ADS lecture of Vilnius University
 // By Žygimantas Sideravičius ISI
+// For the best user experience, 9 is the critical row count for console output alignment!
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -20,19 +22,19 @@ int main()
         for(int c=1;c<i+1;c++)
         {
             int z=tl[c-1];
-            cout<<z+i-c+1<<"  ";
+            cout<<setw(3)<<z+i-c+1;
         }
-        cout<<tl[i]<<"  ";
+        cout<<setw(3)<<tl[i];
         int p=tl[i]-1;
         for(int j=0;j<n-2*i-1;j++)
         {
-            cout<<p<<"  ";
+            cout<<setw(3)<<p;
             p--;
         }
         k-=2;
         for(int m=0;m<i;m++)
         {
-            cout<<tr[n/2-i+m]<<"  ";
+            cout<<setw(3)<<tr[n/2-i+m];
             tr[n/2-i+m]--;
         }
         cout<<endl;
@@ -49,18 +51,18 @@ int main()
         int x=n/2-1-i;
         for(int j=0;j<n/2-i;j++)
         {
-            cout<<bl[j]-x<<"  ";
+            cout<<setw(3)<<bl[j]-x;
             x--;
         }
         for(int a=0;a<2*(i+1);a++)
         {
             bl[n/2-i-1]++;
-            cout<<bl[n/2-i-1]<<"  ";
+            cout<<setw(3)<<bl[n/2-i-1];
         }
         for(int c=0;c<n/2-i-1;c++)
         {
             int h=br[c+i]+c+1;
-            cout<<h<<"  ";
+            cout<<setw(3)<<h;
         }
         cout<<endl;
     }
